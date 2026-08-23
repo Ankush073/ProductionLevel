@@ -1,11 +1,14 @@
-import HomePage from "./component/HomePage/home.jsx";
 import ThemeToggle from "./component/ThemeSwitcher/theme.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Homepage } from "./component/HomePage/home.jsx";
 
 function App() {
   return (
-  
-      <HomePage />
-  
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
