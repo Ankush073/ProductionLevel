@@ -36,9 +36,9 @@ export function Body(props) {
                 <ul className="space-y-2">
                   {section.items.map(function (item) {
                     return (
-                      <li key={item}>
-                        <a href="#" className="text-sm hover:text-[#D9C08C] transition-colors">
-                          {item}
+                      <li key={item.name}>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-[#D9C08C] transition-colors">
+                          {item.name}
                         </a>
                       </li>
                     );
