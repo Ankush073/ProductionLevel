@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 const menu = [
   {
     label: "Coding Platforms",
-    items: ["LeetCode", "Codeforces", "HackerRank", "CodeChef","CSES"],
+    items: ["LeetCode", "Codeforces", "HackerRank", "CodeChef","CSES","Atcoder"],
   },
   {
     label: "Online Resources",
