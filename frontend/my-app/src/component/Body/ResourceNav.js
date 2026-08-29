@@ -1,21 +1,27 @@
 import { useState, useRef } from "react";
+import { codingPlatforms } from "../Platforms/index";
 
 export const menu = [
   {
     label: "Coding Platforms",
-    items: ["Leetcode", "Codeforces", "HackerRank", "CodeChef", "CSES", "Atcoder"],
+    items: codingPlatforms,
   },
   {
     label: "Online Resources",
-    items: ["MDN Web Docs", "freeCodeCamp", "GeeksforGeeks", "The Odin Project"],
+    items: [
+      { name: "MDN Web Docs", url: "https://developer.mozilla.org" },
+      { name: "freeCodeCamp", url: "https://www.freecodecamp.org" },
+      { name: "GeeksforGeeks", url: "https://www.geeksforgeeks.org" },
+      { name: "The Odin Project", url: "https://www.theodinproject.com" },
+    ],
   },
   {
     label: "Books",
     items: [
-      "Introduction to Algorithms",
-      "Clean Code",
-      "Cracking the Coding Interview",
-      "Structure and Interpretation of Computer Programs",
+      { name: "Introduction to Algorithms", url: "#" },
+      { name: "Clean Code", url: "#" },
+      { name: "Cracking the Coding Interview", url: "#" },
+      { name: "Structure and Interpretation of Computer Programs", url: "#" },
     ],
   },
 ];
@@ -60,9 +66,16 @@ export function ResourceNav() {
               <div className="absolute left-1/2 top-full pt-3 transition-all duration-200 z-50" style={{ transform: "translateX(-50%) translateY(" + (open === i ? "0px" : "-6px") + ")", opacity: open === i ? 1 : 0, pointerEvents: open === i ? "auto" : "none", minWidth: "240px" }}>
                 <div className="bg-[#FBF8F1] dark:bg-[#16222E] border border-[#D9C08C]/40 rounded-sm py-2" style={{ boxShadow: "0 8px 20px rgba(0,0,0,0.18)" }}>
                   {section.items.map(function (item) {
-                    return (
-                      <a key={item} href="#" className="block px-6 py-2.5 text-[13.5px] tracking-[0.03em] text-[#1C2B39] dark:text-[#E8E2D4] hover:text-[#8C7A54] dark:hover:text-[#D9C08C] hover:bg-[#1C2B39]/[0.04] dark:hover:bg-white/[0.04] transition-colors duration-150" style={{ fontFamily: "Georgia, serif" }}>
-                        {item}
+                     return (
+                      <a
+                        key={item.name}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-6 py-2.5 text-[13.5px] tracking-[0.03em] text-[#1C2B39] dark:text-[#E8E2D4] hover:text-[#8C7A54] dark:hover:text-[#D9C08C] hover:bg-[#1C2B39]/[0.04] dark:hover:bg-white/[0.04] transition-colors duration-150"
+                        style={{ fontFamily: "Georgia, serif" }}
+                      >
+                        {item.name}
                       </a>
                     );
                   })}

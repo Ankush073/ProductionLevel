@@ -1,0 +1,14 @@
+package com.hitesh;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LeetcodeStatsApiBackendApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeStatsApiBackendApplication.class, args);
+		System.out.println("Application Started");
+	}
+
+}
